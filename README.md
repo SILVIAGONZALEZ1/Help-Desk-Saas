@@ -3,17 +3,17 @@ Las soluciones SaaS permiten a los usuarios acceder a aplicaciones basadas en la
 
 
 Pantalla de inicio de sesion
-![Inicio_de_sesion](image.png)
+![Inicio_de_sesion](/frontend/img/image.png)
 
 Pantalla de recuperacion contraseña
-![Recuperacion_contraseña](image-1.png)
+![Recuperacion_contraseña](/frontend/img/image-1.png)
 
 Pantalla registro de usuario
-![Registro_de_usuario](image-2.png)
+![Registro_de_usuario](/frontend/img/image-2.png)
 
 Dashboard Cliente
-![Dashboard_cliente](image-3.png)
+![Dashboard_cliente](/frontend/img/image-3.png)
 
 Pantalla ticket
-![Pantalla_ticket](image-4.png)
+![Pantalla_ticket](/frontend/img/image-4.png)
 

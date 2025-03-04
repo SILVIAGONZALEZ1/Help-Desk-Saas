@@ -3,8 +3,8 @@
 (() => {
   'use strict'
 
-  // Graphs
-  const ctx = document.getElementById('myChart')
+  // Gráficos
+  const ctx = document.getElementById('myChart');
   // eslint-disable-next-line no-unused-vars
   const myChart = new Chart(ctx, {
     type: 'line',
@@ -45,7 +45,7 @@
         }
       }
     }
-  })
+  });
 
   document.addEventListener('DOMContentLoaded', function() {
     // Cargar incidencias
@@ -70,6 +70,9 @@
       alert('Respuesta enviada: ' + respuesta);
       $('#respuestaModal').modal('hide');
     });
+
+    // Cargar desempeño del técnico
+    cargarDesempeno();
   });
 
   function cargarIncidencias() {
@@ -105,5 +108,14 @@
   window.abrirModalRespuesta = function(id) {
     // Lógica para abrir el modal de respuesta a clientes
     $('#respuestaModal').modal('show');
+  }
+
+  function cargarDesempeno() {
+    // Simulación de carga de desempeño del técnico
+    const incidenciasResueltas = 10; // Número de incidencias resueltas
+    const tiempoPromedioResolucion = 5; // Tiempo promedio de resolución en horas
+
+    document.getElementById('incidenciasResueltas').textContent = incidenciasResueltas;
+    document.getElementById('tiempoPromedioResolucion').textContent = `${tiempoPromedioResolucion} horas`;
   }
 })()
