@@ -61,6 +61,26 @@
       $('#estadoModal').modal('hide');
     });
 
+    // Manejar el formulario de asignar técnico
+    document.getElementById('asignarTecnicoForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Lógica para asignar técnico
+      const tecnico = document.getElementById('tecnico').value;
+      // Aquí deberías agregar la lógica para asignar el técnico en el servidor
+      alert('Técnico asignado: ' + tecnico);
+      $('#asignarTecnicoModal').modal('hide');
+    });
+
+    // Manejar el formulario de configurar alertas
+    document.getElementById('configurarAlertasForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Lógica para configurar alertas
+      const alerta = document.getElementById('alerta').value;
+      // Aquí deberías agregar la lógica para configurar las alertas en el servidor
+      alert('Alerta configurada: ' + alerta);
+      $('#configurarAlertasModal').modal('hide');
+    });
+
     // Manejar el formulario de respuesta a clientes
     document.getElementById('respuestaForm').addEventListener('submit', function(event) {
       event.preventDefault();
@@ -90,6 +110,7 @@
         <td>${incidencia.fecha}</td>
         <td>
           <button class="btn btn-sm btn-primary" onclick="abrirModalEstado(${incidencia.id})">Cambiar Estado</button>
+          <button class="btn btn-sm btn-secondary" onclick="abrirModalAsignarTecnico(${incidencia.id})">Asignar Técnico</button>
           <button class="btn btn-sm btn-secondary" onclick="abrirModalRespuesta(${incidencia.id})">Responder</button>
         </td>
       `;
@@ -100,6 +121,16 @@
   window.abrirModalEstado = function(id) {
     // Lógica para abrir el modal de cambio de estado
     $('#estadoModal').modal('show');
+  }
+
+  window.abrirModalAsignarTecnico = function(id) {
+    // Lógica para abrir el modal de asignar técnico
+    $('#asignarTecnicoModal').modal('show');
+  }
+
+  window.abrirModalConfigurarAlertas = function() {
+    // Lógica para abrir el modal de configurar alertas
+    $('#configurarAlertasModal').modal('show');
   }
 
   window.abrirModalRespuesta = function(id) {
