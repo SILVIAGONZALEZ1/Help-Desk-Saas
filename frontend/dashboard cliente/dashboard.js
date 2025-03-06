@@ -56,15 +56,17 @@ document.addEventListener("DOMContentLoaded", function () {
       const fecha = document.getElementById("fecha").value;
       const categoria = document.getElementById("categoria").value;
       const descripcion = document.getElementById("description").value;
-      const archivo = document.getElementById("file").files[0] ? document.getElementById("file").files[0].name : "";
-      
+      const archivo = document.getElementById("file").files[0]
+        ? document.getElementById("file").files[0].name
+        : "";
+
       const incidencia = {
         titulo,
         fecha,
         categoria,
         descripcion,
         archivo,
-        fecha_creacion: new Date().toISOString()
+        fecha_creacion: new Date().toISOString(),
       };
 
       let incidencias = JSON.parse(localStorage.getItem("incidencias")) || [];
@@ -113,7 +115,11 @@ function cargarHistorial() {
       <td>${incidencia.categoria}</td>
       <td>${incidencia.archivo}</td>
       <td>
-        <button class="btn btn-sm btn-primary" onclick="verDetalle('${incidencia.titulo}', '${incidencia.descripcion}', '${incidencia.fecha_creacion}', '${incidencia.categoria}', '${incidencia.archivo}')">Ver Detalle</button>
+        <button class="btn btn-sm btn-primary" onclick="verDetalle('${
+          incidencia.titulo
+        }', '${incidencia.descripcion}', '${incidencia.fecha_creacion}', '${
+      incidencia.categoria
+    }', '${incidencia.archivo}')">Ver Detalle</button>
         <button class="btn btn-sm btn-secondary" onclick="abrirChat()">Chatear</button>
       </td>
     `;
@@ -217,4 +223,14 @@ function openChat(title) {
   document.getElementById(
     "chatInput"
   ).placeholder = `Chateando sobre: ${title}`;
+}
+
+function handleSubmit(event) {
+  event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+  // Mostrar el modal de éxito
+  var successModal = new bootstrap.Modal(
+    document.getElementById("successModal")
+  );
+  successModal.show();
 }
